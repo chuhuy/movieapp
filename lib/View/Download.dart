@@ -16,9 +16,9 @@ class _DownloadScreenState extends State<DownloadScreen>{
     double scrHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(73, 73, 76, 1),
+      backgroundColor: Color.fromRGBO(144, 144, 144, 1),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(45, 45, 45, 1),
+        backgroundColor: Color.fromRGBO(100, 100, 104, 1),
         title: Text("Tải xuống", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: scrWidth * .05),),
         centerTitle: true,
       ),

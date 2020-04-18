@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/View/HomeTab/HomeTab1.dart';
+import 'package:movieapp/View/HomeTab/HomeTab2.dart';
 import 'package:movieapp/View/VideoPlayer.dart';
 
 class HomeTab extends StatefulWidget{
@@ -52,7 +53,7 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin{
           HomeTabhome(),
           new Text("movie"),
           new Text("film"),
-          new Text("genre")
+          new Text(""),//HomeTabGenre()
         ],
       ),
     );

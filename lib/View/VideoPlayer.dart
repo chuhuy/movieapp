@@ -13,7 +13,7 @@ class VideoPlayerScreen extends StatefulWidget {
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  String videoUrl = "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4";
+  String videoUrl = "https://video.xx.fbcdn.net/v/t39.24130-2/10000000_216719379719948_674003801327134195_n.mp4?_nc_cat=107&_nc_sid=985c63&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_oc=AQnALLOUcTTj5d3elvAYsS_BbolVgC6xSyPbXbqNt87eoTvGUfsPtKKgFLa965W2NWc&_nc_ht=video.xx&oh=30c9c4a9554744720123e58dfdff569e&oe=5E802E4E";
   VideoPlayerController _videoPlayerController;
   ChewieController _chewieController;
   double _aspectRatio = 16 / 9;

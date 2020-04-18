@@ -2,7 +2,6 @@ class Person{
   String name;
   List<String> awards;
   String info;
-
 }
 
 class Cast extends Person{

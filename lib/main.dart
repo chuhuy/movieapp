@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/View/HomeScreen.dart';
 import 'package:movieapp/View/HomeScreen1.dart';
+import 'package:movieapp/View/LogInScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: HomeScreen(),
+      home: LogInScreen(),
     );
   }
 }

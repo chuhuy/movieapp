@@ -3,9 +3,17 @@ import 'package:movieapp/Test.dart';
 import 'package:movieapp/View/CastInformation.dart';
 import 'package:movieapp/View/Information.dart';
 import 'package:movieapp/View/VideoPlayer.dart';
+import 'package:http/http.dart' as http;
 
 class Template {
   Test test = new Test();
+
+  Future<String> getUrl() async {
+    var res = await http.get('https://graph.facebook.com/v6.0/108328157443665?fields=source&access_token=EAAfXTrTmcsYBAMHm2yk9Ln0iB5cJZAH6rFTVgPZBh5OqIf7WLBe40ZAppp7Y9LlPeZBOJaEZBVKyF1POMArSZBdCHtNIdDsTjRqsZABKrGGi6ge5p7cZCDvJaqW0HA3C7miZAaykjh2FZB2INAII4MAGgL11g7AuPnsPQJSPC1Njybk2JFKJIIlqvfhyRRZC1Kq08XQ0jFRchnsKphSiPpvp52SVK8mfMR5bfm4HuOLjZCfj2h66x3pZBvcCN5WHp6AvqA48ZD');
+    if (res.statusCode != 200) throw Exception('get error: statusCode= ${res.statusCode}');
+    return res.body;
+  }
+  
 
   //_____________________________________________________________________________________
   //____________________________________Search Screen____________________________________
