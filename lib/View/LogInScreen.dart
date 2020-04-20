@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:movieapp/View/HomeScreen.dart';
 
 class LogInScreen extends StatefulWidget{
   LogInScreen({Key key}) : super(key: key);
@@ -51,7 +52,7 @@ class _LogInScreenState extends State<LogInScreen>{
                 //        SIGN UP
                 //-------------------------
 
-
+                
 
                 //-------------------------
                 //        SIGN IN
@@ -70,22 +71,29 @@ class _LogInScreenState extends State<LogInScreen>{
                         const Radius.circular(12.0)
                       )
                     ),
-                    child: new TextField(
-                      enabled: logInFormVisible,
-                      decoration: new InputDecoration.collapsed(
-                        hintText: "example@domain.com",
-                        hintStyle: TextStyle(
+                    child: new Container(
+                      margin: EdgeInsets.only(
+                        left: scrWidth * .05,
+                        right: scrWidth * .05,
+                      ),
+                      child: new TextField(
+                        keyboardType: TextInputType.emailAddress,
+                        enabled: logInFormVisible,
+                        decoration: new InputDecoration.collapsed(
+                          hintText: "example@domain.com",
+                          hintStyle: TextStyle(
+                            color: Color.fromRGBO(60, 60, 60, 1),
+                            fontSize: scrWidth * .04
+                          )
+                        ),
+                        controller: usernameController,
+                        cursorColor: Color.fromRGBO(60, 60, 60, 1),
+                        style: TextStyle(
                           color: Color.fromRGBO(60, 60, 60, 1),
                           fontSize: scrWidth * .04
-                        )
+                        ),
                       ),
-                      controller: usernameController,
-                      cursorColor: Color.fromRGBO(60, 60, 60, 1),
-                      style: TextStyle(
-                        color: Color.fromRGBO(60, 60, 60, 1),
-                        fontSize: scrWidth * .04
-                      ),
-                    ),
+                    )
                   ),
                 ),
                 ),
@@ -104,23 +112,30 @@ class _LogInScreenState extends State<LogInScreen>{
                         const Radius.circular(12.0)
                       )
                     ),
-                    child: new TextField(
-                      enabled: logInFormVisible,
-                      obscureText: !isPasswordVisible,
-                      decoration: new InputDecoration.collapsed(
-                        hintText: "your password",
-                        hintStyle: TextStyle(
+                    child: new Container(
+                      margin: EdgeInsets.only(
+                        left: scrWidth * .05,
+                        right: scrWidth * .05,
+                      ),
+                      child: new TextField(                      
+                        //keyboardType: TextInputType.visiblePassword,
+                        enabled: logInFormVisible,
+                        obscureText: !isPasswordVisible,
+                        decoration: new InputDecoration.collapsed(
+                          hintText: "your password",
+                          hintStyle: TextStyle(
+                            color: Color.fromRGBO(60, 60, 60, 1),
+                            fontSize: scrWidth * .04
+                          )
+                        ),
+                        controller: passwordController,
+                        cursorColor: Color.fromRGBO(60, 60, 60, 1),
+                        style: TextStyle(
                           color: Color.fromRGBO(60, 60, 60, 1),
                           fontSize: scrWidth * .04
-                        )
+                        ),
                       ),
-                      controller: passwordController,
-                      cursorColor: Color.fromRGBO(60, 60, 60, 1),
-                      style: TextStyle(
-                        color: Color.fromRGBO(60, 60, 60, 1),
-                        fontSize: scrWidth * .04
-                      ),
-                    ),
+                    )
                   ),
                 ),
                 ),
@@ -191,6 +206,7 @@ class _LogInScreenState extends State<LogInScreen>{
                   duration: Duration(milliseconds: 1000),
                   child: new AnimatedOpacity(                
                     child: new Container(
+                      height: scrHeight * .2,
                       alignment: Alignment.center,
                       child: Image(image: AssetImage(
                         'lib/Model/Assets/name.png'
@@ -244,7 +260,10 @@ class _LogInScreenState extends State<LogInScreen>{
                               logInFormVisible = true;
                             }
                             else{
-
+                              Navigator.pushReplacementNamed(
+                                context,
+                                "/homeScreen",
+                              );
                             }
                           });
                         },
@@ -293,7 +312,7 @@ class _LogInScreenState extends State<LogInScreen>{
                   duration: Duration(milliseconds: 200),
                   child: new Container(
                     //height: scrHeight * .06,
-                    width: scrWidth * .35,
+                    width: scrWidth * .45,
                     child: new FlatButton(
                       child: Center(
                         child: new Text("Quên mật khẩu?", style: TextStyle(color: Colors.white, fontSize: scrWidth * .04, fontWeight: FontWeight.w400),)

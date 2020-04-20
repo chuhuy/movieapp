@@ -11,11 +11,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Xmovies',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
       home: LogInScreen(),
+      routes: {
+        "/homeScreen": (_) => new HomeScreen(),
+      },
     );
   }
 }
